@@ -1,3 +1,0 @@
-local simSkel={}
-
-return simSkel

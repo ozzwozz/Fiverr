@@ -65,7 +65,7 @@ classdef b0RemoteApi < handle
             addpath('./msgpack-matlab/');
             obj.libName = 'b0';
             obj.nodeName='b0RemoteApi_matlabClient';
-            obj.channelName='b0RemoteApiAddOn';
+            obj.channelName='b0RemoteApi';
             obj.inactivityToleranceInSec=60;
             obj.setupSubscribersAsynchronously=false;
             obj.timeout=3

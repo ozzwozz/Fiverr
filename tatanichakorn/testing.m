@@ -2,7 +2,7 @@ function testing()
     function callb(msg)
         disp(jsonencode(msg));
     end
-
+    
     client=b0RemoteApi('b0RemoteApi_matlabClient','b0RemoteApi');
     
     s1=client.simxGetObjectHandle('shape1',client.simxServiceCall());
