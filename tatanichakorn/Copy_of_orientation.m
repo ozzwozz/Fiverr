@@ -99,36 +99,36 @@ for i=1:rows
     REar_Vector = ff(i, 50:52);
     LEar_Vector = ff(i, 53:55);
     
+    
     %     %% Calculate target joinet angles
-
-    A_Neck = atan2(Nose_Vector(1),Neck_Vector(1)) - DO_Neck(1);
-    A_RShoulder_y = atan2(Neck_Vector(2),RShoulder_Vector(2)) - DO_RShoulder(2);
-    A_RShoulder_x = atan2(Neck_Vector(1),RShoulder_Vector(1)) - DO_RShoulder(1);
+    A_Neck = atan2(Nose_Vector(1),Neck_Vector(1)) + DO_Neck(1);
+    A_RShoulder_y = atan2(Neck_Vector(2),RShoulder_Vector(2)) + DO_RShoulder(2);
+    A_RShoulder_x = atan2(Neck_Vector(1),RShoulder_Vector(1)) + DO_RShoulder(1);
     
-    A_LShoulder_y = atan2(Neck_Vector(2),LShoulder_Vector(2)) - DO_LShoulder(2);
-    A_LShoulder_x = atan2(Neck_Vector(1),LShoulder_Vector(1)) - DO_LShoulder(1);
+    A_LShoulder_y = atan2(Neck_Vector(2),LShoulder_Vector(2)) + DO_LShoulder(2);
+    A_LShoulder_x = atan2(Neck_Vector(1),LShoulder_Vector(1)) + DO_LShoulder(1);
     
-    A_RElbow = atan2(RShoulder_Vector(1),RElbow_Vector(1)) - DO_LShoulder(1);
-    A_LElbow = atan2(LShoulder_Vector(1),LElbow_Vector(1)) - DO_LShoulder(1);
+    A_RElbow = atan2(RShoulder_Vector(1),RElbow_Vector(1)) + DO_LShoulder(1);
+    A_LElbow = atan2(LShoulder_Vector(1),LElbow_Vector(1)) + DO_LShoulder(1);
     
-    A_RHip_x = atan2(Neck_Vector(1),RHip_Vector(1)) - DO_RLeg(1);
-    A_RHip_y = atan2(Neck_Vector(2),RHip_Vector(2)) - DO_RLeg(2);
-    A_RHip_z = atan2(Neck_Vector(3),RHip_Vector(3)) - DO_RLeg(3);
+    A_RHip_x = atan2(Neck_Vector(1),RHip_Vector(1)) + DO_RLeg(1);
+    A_RHip_y = atan2(Neck_Vector(2),RHip_Vector(2)) + DO_RLeg(2);
+    A_RHip_z = atan2(Neck_Vector(3),RHip_Vector(3)) + DO_RLeg(3);
     
-    A_LHip_x = atan2(Neck_Vector(1),LHip_Vector(1)) - DO_LLeg(1);
-    A_LHip_y = atan2(Neck_Vector(2),LHip_Vector(2)) - DO_LLeg(2);
-    A_LHip_z = atan2(Neck_Vector(3),LHip_Vector(3)) - DO_LLeg(3);
+    A_LHip_x = atan2(Neck_Vector(1),LHip_Vector(1)) + DO_LLeg(1);
+    A_LHip_y = atan2(Neck_Vector(2),LHip_Vector(2)) + DO_LLeg(2);
+    A_LHip_z = atan2(Neck_Vector(3),LHip_Vector(3)) + DO_LLeg(3);
 
     %A_RHip = atan2(norm(cross(Neck_Vector,RHip_Vector)), dot(Neck_Vector,RHip_Vector)) - DO_LLeg;
     %A_LHip = atan2(norm(cross(Neck_Vector,LHip_Vector)), dot(Neck_Vector,LHip_Vector)) - DO_LLeg;
-    A_Rknee = atan2(RHip_Vector(1),RKnee_Vector(1)) - DO_RLeg(1);
-    A_Lknee = atan2(LHip_Vector(1),LKnee_Vector(1)) - DO_LLeg(1);
+    A_Rknee = atan2(RHip_Vector(1),RKnee_Vector(1)) + DO_RLeg(1);
+    A_Lknee = atan2(LHip_Vector(1),LKnee_Vector(1)) + DO_LLeg(1);
     
-    A_RFoot = atan2(RKnee_Vector(1),RAnkle_Vector(1)) - DO_RLeg(1);
-    A_LFoot = atan2(LKnee_Vector(1),LAnkle_Vector(1)) - DO_LLeg(1);
+    A_RFoot = -atan2(RKnee_Vector(1),RAnkle_Vector(1)) + DO_RLeg(1);
+    A_LFoot = -atan2(LKnee_Vector(1),LAnkle_Vector(1)) + DO_LLeg(1);
     
     %% Send joint angles to coppeliasim - pause the communication so that all angles are changed simultaneously
-    %sim.simxPauseCommunication(clientID,1);
+    sim.simxPauseCommunication(clientID,1);
     sim.simxSetJointTargetPosition(clientID, neck_handle, A_Neck, sim.simx_opmode_blocking);
     
     sim.simxSetJointTargetPosition(clientID, Rshoulder_handlex, A_RShoulder_x, sim.simx_opmode_blocking);
@@ -156,7 +156,7 @@ for i=1:rows
     %         sim.simxSetJointTargetPosition(clientID, Lhip_handley, A_LHip_y, sim.simx_opmode_blocking);
     %         sim.simxSetJointTargetPosition(clientID, Lhip_handlez, A_LHip_z, sim.simx_opmode_blocking);
     
-    %sim.simxPauseCommunication(clientID,0);
+    sim.simxPauseCommunication(clientID,0);
     
     i
 end

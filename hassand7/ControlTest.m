@@ -33,8 +33,8 @@
         %Decide of the motor velocities:
         
         %SimulationParameter(propellerScripts[i],'particleVelocity',particlesTargetVelocities[i]); % script for paramter, paramter name, calculated velocities
-        [~,~,~,~,~] = sim.simxCallScriptFunction(clientID,'Quadricopter#0', sim.sim_scripttype_childscript, 'justdo', 0, 0, 0, 0, sim.simx_opmode_blocking );
-        [~,~,~,~,~] = sim.simxCallScriptFunction(clientID,'Quadricopter#0', sim.sim_scripttype_childscript, 'motorvel', 0, 0, 0, 0, sim.simx_opmode_blocking );
+        [~,~,~,~,~] = sim.simxCallScriptFunction(clientID,'Quadricopter', sim.sim_scripttype_childscript, 'verticalControl', 0, 0, 0, 0, sim.simx_opmode_streaming );
+        [~,~,~,~,~] = sim.simxCallScriptFunction(clientID,'Quadricopter', sim.sim_scripttype_childscript, 'motorvel', 0, 0, 0, 0, sim.simx_opmode_streaming );
 
     end
 

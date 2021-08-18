@@ -3,8 +3,8 @@ disp('Program started');
 % ff = load('C:\trs\ws_emor\emor_trs-master\y-asti\csvF\s1a_16_transformed.csv');
 % laod files into matlab workspace
 time = load('s1a_16_2.csv');
-ff = load('s1a_16.csv');
-%ff = load('move4_1.svo.csv');
+%thing = load('s1a_16.csv');
+ff = load('move4_1.svo.csv');
 
 % get size of matrix for use
 [rows, cols] = size(ff);
@@ -65,10 +65,10 @@ leftLegJointSphere0_handle = sim.simxGetObjectHandle(clientID, 'leftLegJointSphe
 
 %% default orientation
 [~, DO_Neck] = sim.simxGetObjectOrientation(clientID,neckJointSphere_handle,-1,sim.simx_opmode_blocking);
-[~, DO_RShoulder] = sim.simxGetObjectOrientation(clientID,rightShoulder_handle,neckJointSphere_handle,sim.simx_opmode_blocking);
-[~, DO_LShoulder] = sim.simxGetObjectOrientation(clientID,leftShoulder_handle,neckJointSphere_handle,sim.simx_opmode_blocking);
-[~, DO_RLeg] = sim.simxGetObjectOrientation(clientID,rightLegJointSphere0_handle,neckJointSphere_handle,sim.simx_opmode_blocking);
-[~, DO_LLeg] = sim.simxGetObjectOrientation(clientID,leftLegJointSphere0_handle,neckJointSphere_handle,sim.simx_opmode_blocking);
+[~, DO_RShoulder] = sim.simxGetObjectOrientation(clientID,rightShoulder_handle,-1,sim.simx_opmode_blocking);
+[~, DO_LShoulder] = sim.simxGetObjectOrientation(clientID,leftShoulder_handle,-1,sim.simx_opmode_blocking);
+[~, DO_RLeg] = sim.simxGetObjectOrientation(clientID,rightLegJointSphere0_handle,-1,sim.simx_opmode_blocking);
+[~, DO_LLeg] = sim.simxGetObjectOrientation(clientID,leftLegJointSphere0_handle,-1,sim.simx_opmode_blocking);
 
 disp('here');
 
@@ -108,27 +108,28 @@ for i=1:rows
     A_LShoulder_y = atan2(Neck_Vector(2),LShoulder_Vector(2)) - DO_LShoulder(2);
     A_LShoulder_x = atan2(Neck_Vector(1),LShoulder_Vector(1)) - DO_LShoulder(1);
     
-    A_RElbow = atan2(RShoulder_Vector(1),RElbow_Vector(1)) - DO_LShoulder(1);
-    A_LElbow = atan2(LShoulder_Vector(1),LElbow_Vector(1)) - DO_LShoulder(1);
+    A_RElbow = atan2(RShoulder_Vector,RElbow_Vector) - DO_LShoulder(1);
+    A_LElbow = atan2(LShoulder_Vector,LElbow_Vector) - DO_LShoulder(1);
     
-    A_RHip_x = atan2(Neck_Vector(1),RHip_Vector(1)) - DO_RLeg(1);
-    A_RHip_y = atan2(Neck_Vector(2),RHip_Vector(2)) - DO_RLeg(2);
-    A_RHip_z = atan2(Neck_Vector(3),RHip_Vector(3)) - DO_RLeg(3);
-    
-    A_LHip_x = atan2(Neck_Vector(1),LHip_Vector(1)) - DO_LLeg(1);
-    A_LHip_y = atan2(Neck_Vector(2),LHip_Vector(2)) - DO_LLeg(2);
-    A_LHip_z = atan2(Neck_Vector(3),LHip_Vector(3)) - DO_LLeg(3);
+%     A_RHip_x = atan2(Neck_Vector(1),RHip_Vector(1)) - DO_RLeg(1);
+%     A_RHip_y = atan2(Neck_Vector(2),RHip_Vector(2)) - DO_RLeg(2);
+%     A_RHip_z = atan2(Neck_Vector(3),RHip_Vector(3)) - DO_RLeg(3);
+%     
+%     A_LHip_x = atan2(Neck_Vector(1),LHip_Vector(1)) - DO_LLeg(1);
+%     A_LHip_y = atan2(Neck_Vector(2),LHip_Vector(2)) - DO_LLeg(2);
+%     A_LHip_z = atan2(Neck_Vector(3),LHip_Vector(3)) - DO_LLeg(3);
 
     %A_RHip = atan2(norm(cross(Neck_Vector,RHip_Vector)), dot(Neck_Vector,RHip_Vector)) - DO_LLeg;
     %A_LHip = atan2(norm(cross(Neck_Vector,LHip_Vector)), dot(Neck_Vector,LHip_Vector)) - DO_LLeg;
-    A_Rknee = atan2(RHip_Vector(1),RKnee_Vector(1)) - DO_RLeg(1);
+    A_Rknee = atan2(RHip_Vector(1),RKnee_Vector(1)) - DO_LLeg(1);
     A_Lknee = atan2(LHip_Vector(1),LKnee_Vector(1)) - DO_LLeg(1);
     
-    A_RFoot = atan2(RKnee_Vector(1),RAnkle_Vector(1)) - DO_RLeg(1);
-    A_LFoot = atan2(LKnee_Vector(1),LAnkle_Vector(1)) - DO_LLeg(1);
+    A_RFoot = atan2(RKnee_Vector,RAnkle_Vector) - DO_LLeg(1);
+    A_LFoot = atan2(LKnee_Vector,LAnkle_Vector) - DO_LLeg(1);
     
     %% Send joint angles to coppeliasim - pause the communication so that all angles are changed simultaneously
     %sim.simxPauseCommunication(clientID,1);
+    
     sim.simxSetJointTargetPosition(clientID, neck_handle, A_Neck, sim.simx_opmode_blocking);
     
     sim.simxSetJointTargetPosition(clientID, Rshoulder_handlex, A_RShoulder_x, sim.simx_opmode_blocking);
@@ -139,7 +140,10 @@ for i=1:rows
     
     sim.simxSetJointTargetPosition(clientID, Relbow_handle, A_RElbow, sim.simx_opmode_blocking);
     sim.simxSetJointTargetPosition(clientID, Lelbow_handle, A_LElbow, sim.simx_opmode_blocking);
-        
+    
+          sim.simxSetJointTargetPosition(clientID, Lhip_handle, A_LHip, sim.simx_opmode_blocking);
+          sim.simxSetJointTargetPosition(clientID, Rhip_handle, A_RHip, sim.simx_opmode_blocking);
+    
     sim.simxSetJointTargetPosition(clientID, Rknee_handle, A_Rknee, sim.simx_opmode_blocking);
     sim.simxSetJointTargetPosition(clientID, Lknee_handle, A_Lknee, sim.simx_opmode_blocking);
     
@@ -148,11 +152,11 @@ for i=1:rows
     
     %% TEST PUB
     %
-    sim.simxSetJointTargetPosition(clientID, Rhip_handlex, A_RHip_x, sim.simx_opmode_blocking);
+    %sim.simxSetJointTargetPosition(clientID, Rhip_handlex, A_RHip_x, sim.simx_opmode_blocking);
     %         sim.simxSetJointTargetPosition(clientID, Rhip_handley, A_RHip_y, sim.simx_opmode_blocking);
     %         sim.simxSetJointTargetPosition(clientID, Rhip_handlez, A_RHip_z, sim.simx_opmode_blocking);
     %
-    sim.simxSetJointTargetPosition(clientID, Lhip_handlex, A_LHip_x, sim.simx_opmode_blocking);
+    %sim.simxSetJointTargetPosition(clientID, Lhip_handlex, A_LHip_x, sim.simx_opmode_blocking);
     %         sim.simxSetJointTargetPosition(clientID, Lhip_handley, A_LHip_y, sim.simx_opmode_blocking);
     %         sim.simxSetJointTargetPosition(clientID, Lhip_handlez, A_LHip_z, sim.simx_opmode_blocking);
     
