@@ -1,0 +1,3 @@
+<launch>
+    <node name="hand_signals" pkg="hand_signals" type="hand_signals_node" output="screen"/>
+</launch>

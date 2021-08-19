@@ -1,0 +1,8 @@
+prefix=/home/oscar/Documents/GitHub/Fiverr/sofiamarzo/install
+
+Name: hand_signals
+Description: Description of hand_signals
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: cv_bridge image_transport roscpp rospy
