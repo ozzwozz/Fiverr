@@ -8,6 +8,9 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/oscar/Documents/GitHub/Fiverr/aange77/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/oscar/Documents/GitHub/Fiverr/aange77/build'
+export PYTHONPATH="/home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES='/home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/oscar/Documents/GitHub/Fiverr/aange77/src:$ROS_PACKAGE_PATH"

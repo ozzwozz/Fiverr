@@ -1,2 +1,2 @@
-
+braccio_controller:detection
 -DCATKIN_DEVEL_PREFIX=/home/oscar/Documents/GitHub/Fiverr/aange77/devel -DCMAKE_INSTALL_PREFIX=/home/oscar/Documents/GitHub/Fiverr/aange77/install -G Unix Makefiles

@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/oscar/Documents/GitHub/Fiverr/sofiamarzo/devel -DCMAKE_INSTALL_PREFIX=/home/oscar/Documents/GitHub/Fiverr/sofiamarzo/install -G Unix Makefiles

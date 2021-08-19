@@ -1,0 +1,8 @@
+prefix=/home/oscar/Documents/GitHub/Fiverr/aange77/devel
+
+Name: braccio_controller
+Description: Description of braccio_controller
+Version: 0.0.0
+Cflags: -I/home/oscar/Documents/GitHub/Fiverr/aange77/devel/include
+Libs: -L${prefix}/lib 
+Requires: message_runtime

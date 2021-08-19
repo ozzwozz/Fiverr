@@ -1,0 +1,8 @@
+prefix=/home/oscar/Documents/GitHub/Fiverr/aange77/devel
+
+Name: detection
+Description: Description of detection
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: cv_bridge image_transport roscpp rospy

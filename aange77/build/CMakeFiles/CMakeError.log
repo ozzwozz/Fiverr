@@ -1,25 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
 Change Dir: /home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_1deae/fast && /usr/bin/make  -f CMakeFiles/cmTC_1deae.dir/build.make CMakeFiles/cmTC_1deae.dir/build
+Run Build Command(s):/usr/bin/make cmTC_52301/fast && /usr/bin/make -f CMakeFiles/cmTC_52301.dir/build.make CMakeFiles/cmTC_52301.dir/build
 make[1]: Entering directory '/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_1deae.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_1deae.dir/src.c.o -c /home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_1deae
-/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1deae.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD -rdynamic CMakeFiles/cmTC_1deae.dir/src.c.o -o cmTC_1deae 
-CMakeFiles/cmTC_1deae.dir/src.c.o: In function `main':
-src.c:(.text+0x3c): undefined reference to `pthread_create'
-src.c:(.text+0x48): undefined reference to `pthread_detach'
-src.c:(.text+0x54): undefined reference to `pthread_cancel'
-src.c:(.text+0x65): undefined reference to `pthread_join'
-src.c:(.text+0x79): undefined reference to `pthread_atfork'
+Building C object CMakeFiles/cmTC_52301.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_52301.dir/src.c.o   -c /home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_52301
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_52301.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_52301.dir/src.c.o  -o cmTC_52301 
+/usr/bin/ld: CMakeFiles/cmTC_52301.dir/src.c.o: in function `main':
+src.c:(.text+0x46): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_1deae.dir/build.make:105: recipe for target 'cmTC_1deae' failed
-make[1]: *** [cmTC_1deae] Error 1
+make[1]: *** [CMakeFiles/cmTC_52301.dir/build.make:87: cmTC_52301] Error 1
 make[1]: Leaving directory '/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp'
-Makefile:140: recipe for target 'cmTC_1deae/fast' failed
-make: *** [cmTC_1deae/fast] Error 2
+make: *** [Makefile:121: cmTC_52301/fast] Error 2
 
 
 Source file was:
@@ -35,7 +31,6 @@ int main(void)
   pthread_t thread;
   pthread_create(&thread, NULL, test_func, NULL);
   pthread_detach(thread);
-  pthread_cancel(thread);
   pthread_join(thread, NULL);
   pthread_atfork(NULL, NULL, NULL);
   pthread_exit(NULL);
@@ -46,20 +41,18 @@ int main(void)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_ebdef/fast && /usr/bin/make  -f CMakeFiles/cmTC_ebdef.dir/build.make CMakeFiles/cmTC_ebdef.dir/build
+Run Build Command(s):/usr/bin/make cmTC_cde28/fast && /usr/bin/make -f CMakeFiles/cmTC_cde28.dir/build.make CMakeFiles/cmTC_cde28.dir/build
 make[1]: Entering directory '/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_ebdef.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_ebdef.dir/CheckFunctionExists.c.o -c /home/oscar/.local/lib/python2.7/site-packages/cmake/data/share/cmake-3.18/Modules/CheckFunctionExists.c
-Linking C executable cmTC_ebdef
-/home/oscar/.local/lib/python2.7/site-packages/cmake/data/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ebdef.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_ebdef.dir/CheckFunctionExists.c.o -o cmTC_ebdef  -lpthreads 
+Building C object CMakeFiles/cmTC_cde28.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_cde28.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cde28
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cde28.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_cde28.dir/CheckFunctionExists.c.o  -o cmTC_cde28  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_ebdef.dir/build.make:105: recipe for target 'cmTC_ebdef' failed
-make[1]: *** [cmTC_ebdef] Error 1
+make[1]: *** [CMakeFiles/cmTC_cde28.dir/build.make:87: cmTC_cde28] Error 1
 make[1]: Leaving directory '/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles/CMakeTmp'
-Makefile:140: recipe for target 'cmTC_ebdef/fast' failed
-make: *** [cmTC_ebdef/fast] Error 2
+make: *** [Makefile:121: cmTC_cde28/fast] Error 2
 
 
 
