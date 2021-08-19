@@ -5,6 +5,7 @@
 #include <cv_bridge/cv_bridge.h>
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <iostream>
 
 static const std::string OPENCV_WINDOW = "Image window";
 
@@ -15,6 +16,8 @@ class detector()
   image_transport::Subscriber image_sub_;
 
   private:
+    std::bool ParamsSet;
+
   protected:
     cv::SimpleBlobDetector BLOBdetector;
 
@@ -59,36 +62,39 @@ class detector()
 
     cv::Mat Frame = cv_ptr->image;   // copy image to Mat type to use with opencv
 
-    cv::vector<cv::Point> BlobLocations = DetectObjects(Frame);
+    std::vector<KeyPoint> BlobLocations = DetectObjects(Frame);
 
 
     object1_pub_.publish(object1location);
     object2_pub_.publish(object2location);
   }
 
-  cv::vector<cv::Point> detector::DetectObjects(cv::Mat Frame)
+  std::vector<KeyPoint> detector::DetectObjects(cv::Mat Frame)
   {
-    // create SimpleBlobDetector parameter variable
-    SimpleBlobDetector::Params params;
-    params.minThreshold = 10;
-    params.maxThreshold = 10;
+    if ParamsSet == false
+    {
+      // create SimpleBlobDetector parameter variable
+      SimpleBlobDetector::Params params;
+      params.minThreshold = 10;
+      params.maxThreshold = 10;
 
-    params.filterByArea = true;
-    params.minArea = 1500;
+      params.filterByArea = true;
+      params.minArea = 1500;
 
-    params.filterByCircularity = true;
-    params.minCircularity = 0.1;
+      params.filterByCircularity = true;
+      params.minCircularity = 0.1;
 
-    params.filterByConvexity = true;
-    params.minConvexity = true;
+      params.filterByConvexity = true;
+      params.minConvexity = true;
 
-    params.filterByInertia = true;
-    params.minConvexity = 0,01;
+      params.filterByInertia = true;
+      params.minConvexity = 0,01;
 
-    SimpleBlobDetector BlobDetect(params);
+      SimpleBlobDetector BlobDetect(params);
 
-    // set up blob detector with paramaters
-    Ptr<SimpleBlobDetector> BlobDetect = SimpleBlobDetector::create(params);
+      // set up blob detector with paramaters
+      static Ptr<SimpleBlobDetector> BlobDetect = SimpleBlobDetector::create(params);
+    }
 
     std::vector<KeyPoint> keypoints;
     BlobDetect.detect(Frame, keypoints);
@@ -98,6 +104,7 @@ class detector()
     cv::drawKeypoints( Frame, keypoints, Frame_Keypoints, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS );
 
     cv::imshow(OPENCV_WINDOW, Frame_Keypoints);
+    return keypoints;
   }
 };
 
