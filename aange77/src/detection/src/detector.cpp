@@ -64,6 +64,16 @@ class detector()
 
     std::vector<KeyPoint> BlobLocations = DetectObjects(Frame);
 
+    geometry_msgs object1location;
+    geometry_msgs object2location;
+
+    object1location.linear.x = 0;
+    object1location.linear.y = BlobLocations[1][1];
+    object1location.linear.z = BlobLocations[1][2];
+
+    object2location.linear.x = 0;
+    object2location.linear.y = BlobLocations[2][1];
+    object2location.linear.z = BlobLocations[2][2];
 
     object1_pub_.publish(object1location);
     object2_pub_.publish(object2location);
