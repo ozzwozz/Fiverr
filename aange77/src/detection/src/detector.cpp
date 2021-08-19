@@ -68,6 +68,7 @@ class detector()
 
   cv::vector<cv::Point> detector::DetectObjects(cv::Mat Frame)
   {
+    // create SimpleBlobDetector parameter variable
     SimpleBlobDetector::Params params;
     params.minThreshold = 10;
     params.maxThreshold = 10;
@@ -86,10 +87,17 @@ class detector()
 
     SimpleBlobDetector BlobDetect(params);
 
+    // set up blob detector with paramaters
     Ptr<SimpleBlobDetector> BlobDetect = SimpleBlobDetector::create(params);
 
-    cv::imshow(OPENCV_WINDOW, BlobDetect);
+    std::vector<KeyPoint> keypoints;
+    BlobDetect.detect(Frame, keypoints);
 
+    cv::Mat Frame_Keypoints;
+
+    cv::drawKeypoints( Frame, keypoints, Frame_Keypoints, Scalar(0,0,255), DrawMatchesFlags::DRAW_RICH_KEYPOINTS );
+
+    cv::imshow(OPENCV_WINDOW, Frame_Keypoints);
   }
 };
 
