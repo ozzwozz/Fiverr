@@ -66,10 +66,7 @@ class detector()
 
     geometry_msgs object1location;
     geometry_msgs object2location;
-<<<<<<< HEAD
 
-=======
->>>>>>> ce2e350d736e217e1b121024b945151216ff18ea
     object1location.linear.x = 0;
     object1location.linear.y = BlobLocations[1][1];
     object1location.linear.z = BlobLocations[1][2];
