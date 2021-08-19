@@ -48,7 +48,6 @@ class detector
 
   void detectorCB(const sensor_msgs::ImageConstPtr& msg)
   {
-
     cv_bridge::CvImagePtr cv_ptr;
 
     try
