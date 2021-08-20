@@ -27,6 +27,8 @@ class hand_signals
     cv::Mat LeftImage;
     cv::Mat RightImage;
 
+    geometry_msgs::Twist object1location;
+
   public:
     hand_signals()
       : it_(nh_)
@@ -35,10 +37,10 @@ class hand_signals
       image_sub_ = it_.subscribe("/usb_cam/image_raw", 1, &hand_signals::handCameraCB, this);
       object1_pub_ = nh_.advertise<geometry_msgs::Twist>("/robo_Twist", 1);
 
-      StopImage = cv::imread("/home/oscar/Pictures/STOP.png");
-      ForwardImage = cv::imread("/home/oscar/Pictures/FORWARD.jpeg");
-      LeftImage = cv::imread("/home/oscar/Pictures/STOP.jpeg");
-      RightImage = cv::imread("/home/oscar/Pictures/STOP.jpeg");
+      StopImage = cv::imread("/home/oscar/Documents/GitHub/Fiverr/sofiamarzo/src/hand_signals/config/st.png");
+      ForwardImage = cv::imread("/home/oscar/Documents/GitHub/Fiverr/sofiamarzo/src/hand_signals/config/fw.png");
+      LeftImage = cv::imread("/home/oscar/Documents/GitHub/Fiverr/sofiamarzo/src/hand_signals/config/l.png");
+      RightImage = cv::imread("/home/oscar/Documents/GitHub/Fiverr/sofiamarzo/src/hand_signals/config/r.png");
 
       StopImage = ImagePrep(StopImage);
       ForwardImage = ImagePrep(ForwardImage);
@@ -48,7 +50,6 @@ class hand_signals
 
       // open a window to see what the camera sees
       cv::namedWindow(OPENCV_WINDOW);
-      cv::imshow(OPENCV_WINDOW, StopImage);    cv::waitKey(100);
 
 
     }
@@ -61,10 +62,10 @@ class hand_signals
   cv::Mat ImagePrep(cv::Mat Image)
   {
     cv::Mat GRAYimage;
-    cv::resize(Image, Image, cv::Size(480,640)); // convert to uniform size
-    cv::cvtColor(Image, GRAYimage, cv::COLOR_BGR2GRAY);
-    cv::threshold(GRAYimage, Image, 150, 250, 3);      //3: Threshold to Zero
-    return Image;
+      cv::resize(Image, Image, cv::Size(480,640)); // convert to uniform size
+      cv::cvtColor(Image, GRAYimage, cv::COLOR_BGR2GRAY); // gray colourspace is easier for most opencv functions
+      //cv::threshold(GRAYimage, Image, 150, 250, 3);      //3: Threshold to Zero
+    return GRAYimage;
   }
 
   void handCameraCB(const sensor_msgs::ImageConstPtr& msg)
@@ -85,24 +86,74 @@ class hand_signals
 
     //cv::compare(master, current, a);
     cv::Mat StopResult, ForwardResult, LeftResult, RightResult;
+    double StopScore, ForwardScore, LeftScore, RightScore;
     cv::matchTemplate(CurrentImage, StopImage, StopResult, cv::TM_SQDIFF_NORMED);
     cv::matchTemplate(CurrentImage, ForwardImage, ForwardResult, cv::TM_SQDIFF_NORMED);
     cv::matchTemplate(CurrentImage, LeftImage, LeftResult, cv::TM_SQDIFF_NORMED);
     cv::matchTemplate(CurrentImage, RightImage, RightResult, cv::TM_SQDIFF_NORMED);
 
-    if (StopResult < ForwardResult && StopResult < LeftResult && StopResult < RightResult)
-    {
-      ROS_ERROR("This does acc work");
-    }
-    // object1location.linear.x = 0;
-    // object1location.linear.y = point2f_vector[1].x;
-    // object1location.linear.z = point2f_vector[1].y;
-    //
-    // object2location.linear.x = 0;
-    // object2location.linear.y = point2f_vector[2].x;
-    // object2location.linear.z = point2f_vector[2].y;
+    cv::minMaxLoc(StopResult, 0, &StopScore);
+    cv::minMaxLoc(ForwardResult, 0, &ForwardScore);
+    cv::minMaxLoc(LeftResult, 0, &LeftScore);
+    cv::minMaxLoc(RightResult, 0, &RightScore);
 
-    // object1_pub_.publish(object1location);
+
+    ROS_ERROR("StopScore %f", StopScore);
+    ROS_ERROR("ForwardScore %f", ForwardScore);
+    ROS_ERROR("LeftScore %f", LeftScore);
+    ROS_ERROR("RightScore %f", RightScore);
+
+    if (StopScore < ForwardScore && StopScore < LeftScore && StopScore < RightScore)
+    {
+      MoveStop();
+    }
+    else if (ForwardScore < StopScore && ForwardScore < LeftScore && ForwardScore < RightScore)
+    {
+      MoveForward();
+    }
+    else if (LeftScore < StopScore && LeftScore < ForwardScore && LeftScore < RightScore)
+    {
+      MoveLeft();
+    }
+    else if (RightScore < StopScore && RightScore < ForwardScore && RightScore < LeftScore)
+    {
+      MoveRight();
+    }
+
+    cv::imshow(OPENCV_WINDOW, CurrentImage);    cv::waitKey(100);
+
+  }
+
+  void MoveForward()
+  {
+    object1location.linear.x = 1;
+    object1location.linear.y = 0;
+
+    object1_pub_.publish(object1location);
+  }
+
+  void MoveStop()
+  {
+    object1location.linear.x = 0;
+    object1location.linear.y = 0;
+
+    object1_pub_.publish(object1location);
+  }
+
+  void MoveLeft()
+  {
+    object1location.linear.x = 0;
+    object1location.angular.x = -1;
+
+    object1_pub_.publish(object1location);
+  }
+
+  void MoveRight()
+  {
+    object1location.linear.x = 0;
+    object1location.angular.x = 1;
+
+    object1_pub_.publish(object1location);
   }
 
 };
