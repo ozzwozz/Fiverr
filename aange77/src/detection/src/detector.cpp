@@ -29,11 +29,13 @@ class detector
       : it_(nh_)
     {
       // Subscrive to input video feed and publish output video feed
-      image_sub_ = it_.subscribe("/camera/rgb/image_raw", 1, &detector::detectorCB, this);
-
+      //image_sub_ = it_.subscribe("/camera/rgb/image_raw", 1, &detector::detectorCB, this);
+      image_sub_ = it_.subscribe("/usb_cam/image_raw", 1, &detector::detectorCB, this);
       object1_pub_ = nh_.advertise<geometry_msgs::Twist>("/object1", 1);
       object2_pub_ = nh_.advertise<geometry_msgs::Twist>("/object2", 1);
       // centreTarget_pub_ = nh_.advertise<geometry_msgs::Twist>("/centreTarget", 1);
+
+
 
       // open a window to see what the camera sees
       cv::namedWindow(OPENCV_WINDOW);
@@ -53,7 +55,7 @@ class detector
     try
     {
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);  // convert from imagetransport to rosbridge pointer
-      cv::resize(cv_ptr->image, cv_ptr->image, cv::Size(1080,720)); // convert to uniform size
+      cv::resize(cv_ptr->image, cv_ptr->image, cv::Size(480,640)); // convert to uniform size
       cv::flip(cv_ptr->image, cv_ptr->image, 0); // flip to correct orientation
     }
     catch (cv_bridge::Exception& e)
@@ -63,6 +65,7 @@ class detector
     }
 
     cv::Mat Frame = cv_ptr->image;   // copy image to Mat type to use with opencv
+    Frame = cv::imread("/home/oscar/Pictures/surface.png", cv::IMREAD_GRAYSCALE);
 
     std::vector<cv::KeyPoint> BlobLocations = DetectObjects(Frame);
 
@@ -72,16 +75,20 @@ class detector
     std::vector<cv::Point2f> point2f_vector; //We define vector of point2f
     cv::KeyPoint::convert(BlobLocations, point2f_vector, std::vector< int >()); //Then we use this nice function from OpenCV to directly convert from KeyPoint vector to Point2f vector
 
-    object1location.linear.x = 0;
-    object1location.linear.y = point2f_vector[1].x;
-    object1location.linear.z = point2f_vector[1].y;
 
-    object2location.linear.x = 0;
-    object2location.linear.y = point2f_vector[2].x;
-    object2location.linear.z = point2f_vector[2].y;
-
-    object1_pub_.publish(object1location);
-    object2_pub_.publish(object2location);
+    // object1location.linear.x = 0;
+    // object1location.linear.y = point2f_vector[1].x;
+    // object1location.linear.z = point2f_vector[1].y;
+    // //object1location.angular.x = ;
+    //
+    //
+    // object2location.linear.x = 0;
+    // object2location.linear.y = point2f_vector[2].x;
+    // object2location.linear.z = point2f_vector[2].y;
+    // //object2location.angular.x = ;
+    //
+    // object1_pub_.publish(object1location);
+    // object2_pub_.publish(object2location);
   }
 
   std::vector<cv::KeyPoint> DetectObjects(cv::Mat Frame)
@@ -91,19 +98,25 @@ class detector
       // create SimpleBlobDetector parameter variable
       cv::SimpleBlobDetector::Params params;
       params.minThreshold = 10;
-      params.maxThreshold = 10;
+      params.maxThreshold = 200;
 
-      params.filterByArea = true;
+      // Filter by Area.
+      params.filterByArea = false;
       params.minArea = 1500;
 
+      // Filter by Circularity
       params.filterByCircularity = true;
-      params.minCircularity = 0.1;
+      params.minCircularity = 0.785;
 
-      params.filterByConvexity = true;
-      params.minConvexity = true;
+      // Filter by Convexity
+      params.filterByConvexity = false;
+      params.minConvexity = 0.87;
 
+      // Filter by Inertia
       params.filterByInertia = true;
-      params.minConvexity = 0,01;
+      params.minInertiaRatio = 0.01;
+
+
 
       //cv::SimpleBlobDetector detector(params);  // set up blob detector with paramaters
     //}
@@ -113,9 +126,11 @@ class detector
 
     cv::Mat Frame_Keypoints;
 
-    drawKeypoints( Frame, keypoints, Frame_Keypoints, cv::Scalar(0,0,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS );
+    cv::drawKeypoints( Frame, keypoints, Frame_Keypoints, cv::Scalar(0,0,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS );
 
     cv::imshow(OPENCV_WINDOW, Frame_Keypoints);
+    cv::waitKey(100);
+
     return keypoints;
   }
 };

@@ -57,7 +57,7 @@ class hand_signals
     ~hand_signals()
     {
       // if the node is killed, so is the window
-      //cv::destroyWindow(OPENCV_WINDOW);
+      cv::destroyWindow(OPENCV_WINDOW);
     }
   cv::Mat ImagePrep(cv::Mat Image)
   {
