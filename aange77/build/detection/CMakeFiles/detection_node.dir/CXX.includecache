@@ -25,6 +25,12 @@ geometry_msgs/Twist.h
 -
 iostream
 -
+opencv2/imgcodecs.hpp
+/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/src/opencv2/imgcodecs.hpp
+opencv2/highgui.hpp
+/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/src/opencv2/highgui.hpp
+opencv2/imgproc.hpp
+/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/src/opencv2/imgproc.hpp
 
 /opt/ros/noetic/include/cv_bridge/cv_bridge.h
 sensor_msgs/Image.h

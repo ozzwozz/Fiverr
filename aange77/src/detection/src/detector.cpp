@@ -9,6 +9,12 @@
 #include <geometry_msgs/Twist.h>
 #include <iostream>
 
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/imgproc.hpp"
+using namespace cv;
+using namespace std;
+
 static const std::string OPENCV_WINDOW = "Image window";
 
 class detector
@@ -19,6 +25,8 @@ class detector
 
   private:
     bool ParamsSet;
+    cv::Mat StopImage;
+
 
   protected:
     cv::SimpleBlobDetector BLOBdetector;
@@ -30,11 +38,10 @@ class detector
     {
       // Subscrive to input video feed and publish output video feed
       //image_sub_ = it_.subscribe("/camera/rgb/image_raw", 1, &detector::detectorCB, this);
-      image_sub_ = it_.subscribe("/usb_cam/image_raw", 1, &detector::detectorCB, this);
+      image_sub_ = it_.subscribe("/usb_cam/image_raw", 1, &detector::handCameraCB, this);
       object1_pub_ = nh_.advertise<geometry_msgs::Twist>("/object1", 1);
       object2_pub_ = nh_.advertise<geometry_msgs::Twist>("/object2", 1);
       // centreTarget_pub_ = nh_.advertise<geometry_msgs::Twist>("/centreTarget", 1);
-
 
 
       // open a window to see what the camera sees
@@ -46,6 +53,39 @@ class detector
     {
       // if the node is killed, so is the window
       cv::destroyWindow(OPENCV_WINDOW);
+    }
+    cv::Mat ImagePrep(cv::Mat Image)
+    {
+      cv::Mat GRAYimage;
+        cv::resize(Image, Image, cv::Size(480,640)); // convert to uniform size
+        cv::cvtColor(Image, GRAYimage, cv::COLOR_BGR2GRAY); // gray colourspace is easier for most opencv functions
+        //cv::threshold(GRAYimage, Image, 150, 250, 3);      //3: Threshold to Zero
+      return GRAYimage;
+    }
+
+    void handCameraCB(const sensor_msgs::ImageConstPtr& msg)
+    {
+      Mat CurrentImage = imread("/home/oscar/Pictures/inline.png", IMREAD_GRAYSCALE);
+      Mat LeftImage = imread("/home/oscar/Pictures/LeftEnd.png", IMREAD_GRAYSCALE);
+      Mat RightImage = imread("/home/oscar/Pictures/RightEnd.png", IMREAD_GRAYSCALE);
+
+      cv_bridge::CvImagePtr cv_ptr;
+      //cv::Mat CurrentImage;
+
+      cv::Mat LeftResult, RightResult;
+      double StopScore;
+      cv::matchTemplate(CurrentImage, LeftImage, LeftResult, cv::TM_SQDIFF_NORMED);
+      cv::matchTemplate(CurrentImage, RightImage, RightResult, cv::TM_SQDIFF_NORMED);
+
+      double minVal, maxVal; Point minLoc, maxLoc, matchLoc;
+      minMaxLoc( LeftResult, &minVal, &maxVal, &minLoc, &maxLoc);
+      rectangle( CurrentImage, Point(minLoc.x, minLoc.y), Point( minLoc.x + LeftImage.cols , minLoc.y + LeftImage.rows ), Scalar(0,255,0));
+
+      cv::matchTemplate(CurrentImage, RightImage, RightResult, cv::TM_SQDIFF_NORMED);
+      minMaxLoc( RightResult, &minVal, &maxVal, &minLoc, &maxLoc);
+      rectangle( CurrentImage, Point(minLoc.x, minLoc.y), Point( minLoc.x + RightImage.cols , minLoc.y + RightImage.rows ), Scalar(0,255,0));
+
+      cv::imshow(OPENCV_WINDOW, CurrentImage);    cv::waitKey(100);
     }
 
   void detectorCB(const sensor_msgs::ImageConstPtr& msg)
@@ -65,15 +105,15 @@ class detector
     }
 
     cv::Mat Frame = cv_ptr->image;   // copy image to Mat type to use with opencv
-    Frame = cv::imread("/home/oscar/Pictures/surface.png", cv::IMREAD_GRAYSCALE);
+    Frame = cv::imread("/home/oscar/Pictures/inline.png", cv::IMREAD_GRAYSCALE);
 
-    std::vector<cv::KeyPoint> BlobLocations = DetectObjects(Frame);
+    //std::vector<cv::KeyPoint> BlobLocations = DetectObjects(Frame);
 
     geometry_msgs::Twist object1location;
     geometry_msgs::Twist object2location;
 
     std::vector<cv::Point2f> point2f_vector; //We define vector of point2f
-    cv::KeyPoint::convert(BlobLocations, point2f_vector, std::vector< int >()); //Then we use this nice function from OpenCV to directly convert from KeyPoint vector to Point2f vector
+    //cv::KeyPoint::convert(BlobLocations, point2f_vector, std::vector< int >()); //Then we use this nice function from OpenCV to directly convert from KeyPoint vector to Point2f vector
 
 
     // object1location.linear.x = 0;
@@ -89,49 +129,6 @@ class detector
     //
     // object1_pub_.publish(object1location);
     // object2_pub_.publish(object2location);
-  }
-
-  std::vector<cv::KeyPoint> DetectObjects(cv::Mat Frame)
-  {
-    //if(ParamsSet == false)
-    //{
-      // create SimpleBlobDetector parameter variable
-      cv::SimpleBlobDetector::Params params;
-      params.minThreshold = 10;
-      params.maxThreshold = 200;
-
-      // Filter by Area.
-      params.filterByArea = false;
-      params.minArea = 1500;
-
-      // Filter by Circularity
-      params.filterByCircularity = true;
-      params.minCircularity = 0.785;
-
-      // Filter by Convexity
-      params.filterByConvexity = false;
-      params.minConvexity = 0.87;
-
-      // Filter by Inertia
-      params.filterByInertia = true;
-      params.minInertiaRatio = 0.01;
-
-
-
-      //cv::SimpleBlobDetector detector(params);  // set up blob detector with paramaters
-    //}
-    cv::Ptr<cv::SimpleBlobDetector> detector = cv::SimpleBlobDetector::create(params);
-    std::vector<cv::KeyPoint> keypoints;
-    detector->detect(Frame, keypoints);
-
-    cv::Mat Frame_Keypoints;
-
-    cv::drawKeypoints( Frame, keypoints, Frame_Keypoints, cv::Scalar(0,0,255), cv::DrawMatchesFlags::DRAW_RICH_KEYPOINTS );
-
-    cv::imshow(OPENCV_WINDOW, Frame_Keypoints);
-    cv::waitKey(100);
-
-    return keypoints;
   }
 };
 
