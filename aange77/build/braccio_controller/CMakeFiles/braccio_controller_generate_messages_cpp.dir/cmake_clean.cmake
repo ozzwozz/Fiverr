@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/Adc.h"
+  "/home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/coords.h"
   "CMakeFiles/braccio_controller_generate_messages_cpp"
 )
 

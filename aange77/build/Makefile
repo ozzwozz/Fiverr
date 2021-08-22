@@ -285,6 +285,71 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named braccio_controller_generate_messages_py
+
+# Build rule for target.
+braccio_controller_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_generate_messages_py
+.PHONY : braccio_controller_generate_messages_py
+
+# fast build rule for target.
+braccio_controller_generate_messages_py/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build
+.PHONY : braccio_controller_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named braccio_controller_gennodejs
+
+# Build rule for target.
+braccio_controller_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_gennodejs
+.PHONY : braccio_controller_gennodejs
+
+# fast build rule for target.
+braccio_controller_gennodejs/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build
+.PHONY : braccio_controller_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named braccio_controller_generate_messages_lisp
+
+# Build rule for target.
+braccio_controller_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_generate_messages_lisp
+.PHONY : braccio_controller_generate_messages_lisp
+
+# fast build rule for target.
+braccio_controller_generate_messages_lisp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build
+.PHONY : braccio_controller_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named braccio_controller_geneus
+
+# Build rule for target.
+braccio_controller_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_geneus
+.PHONY : braccio_controller_geneus
+
+# fast build rule for target.
+braccio_controller_geneus/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build
+.PHONY : braccio_controller_geneus/fast
+
+#=============================================================================
+# Target rules for targets named braccio_controller_gencpp
+
+# Build rule for target.
+braccio_controller_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_gencpp
+.PHONY : braccio_controller_gencpp
+
+# fast build rule for target.
+braccio_controller_gencpp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build
+.PHONY : braccio_controller_gencpp/fast
+
+#=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_py
 
 # Build rule for target.
@@ -309,6 +374,32 @@ roscpp_generate_messages_lisp: cmake_check_build_system
 roscpp_generate_messages_lisp/fast:
 	$(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_nodejs
+
+# Build rule for target.
+geometry_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
 # Target rules for targets named rosgraph_msgs_generate_messages_lisp
@@ -337,19 +428,6 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named braccio_controller_gencpp
-
-# Build rule for target.
-braccio_controller_gencpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_gencpp
-.PHONY : braccio_controller_gencpp
-
-# fast build rule for target.
-braccio_controller_gencpp/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build
-.PHONY : braccio_controller_gencpp/fast
-
-#=============================================================================
 # Target rules for targets named std_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -363,30 +441,17 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named std_msgs_generate_messages_eus
+# Target rules for targets named rosgraph_msgs_generate_messages_cpp
 
 # Build rule for target.
-std_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_eus
-.PHONY : std_msgs_generate_messages_eus
+rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
+.PHONY : rosgraph_msgs_generate_messages_cpp
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_py
-
-# Build rule for target.
-roscpp_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+rosgraph_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
 # Target rules for targets named braccio_controller_generate_messages_nodejs
@@ -402,19 +467,6 @@ braccio_controller_generate_messages_nodejs/fast:
 .PHONY : braccio_controller_generate_messages_nodejs/fast
 
 #=============================================================================
-# Target rules for targets named roscpp_generate_messages_nodejs
-
-# Build rule for target.
-roscpp_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_nodejs
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named braccio_controller_genlisp
 
 # Build rule for target.
@@ -428,17 +480,56 @@ braccio_controller_genlisp/fast:
 .PHONY : braccio_controller_genlisp/fast
 
 #=============================================================================
-# Target rules for targets named braccio_controller_generate_messages_py
+# Target rules for targets named roscpp_generate_messages_nodejs
 
 # Build rule for target.
-braccio_controller_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_generate_messages_py
-.PHONY : braccio_controller_generate_messages_py
+roscpp_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_nodejs
+.PHONY : roscpp_generate_messages_nodejs
 
 # fast build rule for target.
-braccio_controller_generate_messages_py/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build
-.PHONY : braccio_controller_generate_messages_py/fast
+roscpp_generate_messages_nodejs/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_eus
+
+# Build rule for target.
+std_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_eus
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_lisp
+
+# Build rule for target.
+geometry_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_py
+
+# Build rule for target.
+roscpp_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_py
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named std_msgs_generate_messages_lisp
@@ -480,17 +571,108 @@ roscpp_generate_messages_eus/fast:
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
-# Target rules for targets named std_msgs_generate_messages_nodejs
+# Target rules for targets named braccio_controller_genpy
 
 # Build rule for target.
-std_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
-.PHONY : std_msgs_generate_messages_nodejs
+braccio_controller_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_genpy
+.PHONY : braccio_controller_genpy
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+braccio_controller_genpy/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build.make braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build
+.PHONY : braccio_controller_genpy/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_eus
+
+# Build rule for target.
+sensor_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named roscpp_generate_messages_cpp
+
+# Build rule for target.
+roscpp_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named braccio_controller_generate_messages_eus
+
+# Build rule for target.
+braccio_controller_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_generate_messages_eus
+.PHONY : braccio_controller_generate_messages_eus
+
+# fast build rule for target.
+braccio_controller_generate_messages_eus/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build
+.PHONY : braccio_controller_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_lisp
+
+# Build rule for target.
+sensor_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_nodejs
+
+# Build rule for target.
+sensor_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_py
+
+# Build rule for target.
+sensor_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_py
+
+# Build rule for target.
+geometry_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named _braccio_controller_generate_messages_check_deps_Adc
@@ -519,6 +701,45 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named sensor_msgs_generate_messages_cpp
+
+# Build rule for target.
+sensor_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named std_msgs_generate_messages_nodejs
+
+# Build rule for target.
+std_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_msgs_generate_messages_nodejs
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named braccio_controller_generate_messages
 
 # Build rule for target.
@@ -545,199 +766,17 @@ braccio_controller_generate_messages_cpp/fast:
 .PHONY : braccio_controller_generate_messages_cpp/fast
 
 #=============================================================================
-# Target rules for targets named braccio_controller_generate_messages_eus
+# Target rules for targets named _braccio_controller_generate_messages_check_deps_coords
 
 # Build rule for target.
-braccio_controller_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_generate_messages_eus
-.PHONY : braccio_controller_generate_messages_eus
+_braccio_controller_generate_messages_check_deps_coords: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _braccio_controller_generate_messages_check_deps_coords
+.PHONY : _braccio_controller_generate_messages_check_deps_coords
 
 # fast build rule for target.
-braccio_controller_generate_messages_eus/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build
-.PHONY : braccio_controller_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named braccio_controller_geneus
-
-# Build rule for target.
-braccio_controller_geneus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_geneus
-.PHONY : braccio_controller_geneus
-
-# fast build rule for target.
-braccio_controller_geneus/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build
-.PHONY : braccio_controller_geneus/fast
-
-#=============================================================================
-# Target rules for targets named braccio_controller_generate_messages_lisp
-
-# Build rule for target.
-braccio_controller_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_generate_messages_lisp
-.PHONY : braccio_controller_generate_messages_lisp
-
-# fast build rule for target.
-braccio_controller_generate_messages_lisp/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build
-.PHONY : braccio_controller_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named braccio_controller_gennodejs
-
-# Build rule for target.
-braccio_controller_gennodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_gennodejs
-.PHONY : braccio_controller_gennodejs
-
-# fast build rule for target.
-braccio_controller_gennodejs/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build
-.PHONY : braccio_controller_gennodejs/fast
-
-#=============================================================================
-# Target rules for targets named roscpp_generate_messages_cpp
-
-# Build rule for target.
-roscpp_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 roscpp_generate_messages_cpp
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named braccio_controller_genpy
-
-# Build rule for target.
-braccio_controller_genpy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 braccio_controller_genpy
-.PHONY : braccio_controller_genpy
-
-# fast build rule for target.
-braccio_controller_genpy/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build.make braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build
-.PHONY : braccio_controller_genpy/fast
-
-#=============================================================================
-# Target rules for targets named rosgraph_msgs_generate_messages_cpp
-
-# Build rule for target.
-rosgraph_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rosgraph_msgs_generate_messages_cpp
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_gencfg
-
-# Build rule for target.
-dynamic_reconfigure_gencfg: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_gencfg
-.PHONY : dynamic_reconfigure_gencfg
-
-# fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make detection/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_py
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_py
-.PHONY : dynamic_reconfigure_generate_messages_py
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_py/fast:
-	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_nodejs
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_nodejs
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_lisp
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_lisp
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_cpp
-
-# Build rule for target.
-sensor_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_cpp
-.PHONY : sensor_msgs_generate_messages_cpp
-
-# fast build rule for target.
-sensor_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f detection/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make detection/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
-.PHONY : sensor_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_eus
-
-# Build rule for target.
-geometry_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f detection/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make detection/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_lisp
-
-# Build rule for target.
-geometry_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f detection/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make detection/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_eus
-
-# Build rule for target.
-sensor_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_eus
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	$(MAKE) -f detection/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make detection/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
+_braccio_controller_generate_messages_check_deps_coords/fast:
+	$(MAKE) -f braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/build.make braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/build
+.PHONY : _braccio_controller_generate_messages_check_deps_coords/fast
 
 #=============================================================================
 # Target rules for targets named image_view_gencfg
@@ -753,45 +792,6 @@ image_view_gencfg/fast:
 .PHONY : image_view_gencfg/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_py
-
-# Build rule for target.
-sensor_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_py
-.PHONY : sensor_msgs_generate_messages_py
-
-# fast build rule for target.
-sensor_msgs_generate_messages_py/fast:
-	$(MAKE) -f detection/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make detection/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
-.PHONY : sensor_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_cpp
-
-# Build rule for target.
-geometry_msgs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f detection/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make detection/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_nodejs
-
-# Build rule for target.
-geometry_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_nodejs
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f detection/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make detection/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
 # Target rules for targets named dynamic_reconfigure_generate_messages_cpp
 
 # Build rule for target.
@@ -803,6 +803,58 @@ dynamic_reconfigure_generate_messages_cpp: cmake_check_build_system
 dynamic_reconfigure_generate_messages_cpp/fast:
 	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
 .PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_py
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_py
+.PHONY : dynamic_reconfigure_generate_messages_py
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_py/fast:
+	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_gencfg
+
+# Build rule for target.
+dynamic_reconfigure_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_gencfg
+.PHONY : dynamic_reconfigure_gencfg
+
+# fast build rule for target.
+dynamic_reconfigure_gencfg/fast:
+	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make detection/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_nodejs
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_nodejs
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named dynamic_reconfigure_generate_messages_eus
+
+# Build rule for target.
+dynamic_reconfigure_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_eus
+.PHONY : dynamic_reconfigure_generate_messages_eus
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_eus/fast:
+	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_eus/fast
 
 #=============================================================================
 # Target rules for targets named detection_node
@@ -818,56 +870,17 @@ detection_node/fast:
 .PHONY : detection_node/fast
 
 #=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_lisp
+# Target rules for targets named dynamic_reconfigure_generate_messages_lisp
 
 # Build rule for target.
-sensor_msgs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_lisp
-.PHONY : sensor_msgs_generate_messages_lisp
+dynamic_reconfigure_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_lisp
+.PHONY : dynamic_reconfigure_generate_messages_lisp
 
 # fast build rule for target.
-sensor_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f detection/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make detection/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
-.PHONY : sensor_msgs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named sensor_msgs_generate_messages_nodejs
-
-# Build rule for target.
-sensor_msgs_generate_messages_nodejs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sensor_msgs_generate_messages_nodejs
-.PHONY : sensor_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-sensor_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f detection/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make detection/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
-.PHONY : sensor_msgs_generate_messages_nodejs/fast
-
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_py
-
-# Build rule for target.
-geometry_msgs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	$(MAKE) -f detection/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make detection/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-#=============================================================================
-# Target rules for targets named dynamic_reconfigure_generate_messages_eus
-
-# Build rule for target.
-dynamic_reconfigure_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 dynamic_reconfigure_generate_messages_eus
-.PHONY : dynamic_reconfigure_generate_messages_eus
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_eus/fast:
-	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+dynamic_reconfigure_generate_messages_lisp/fast:
+	$(MAKE) -f detection/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make detection/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
 
 # Help Target
 help:
@@ -891,51 +904,52 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... braccio_controller_generate_messages_py"
+	@echo "... braccio_controller_gennodejs"
+	@echo "... braccio_controller_generate_messages_lisp"
+	@echo "... braccio_controller_geneus"
+	@echo "... braccio_controller_gencpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... braccio_controller_gencpp"
 	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_py"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... braccio_controller_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... braccio_controller_genlisp"
-	@echo "... braccio_controller_generate_messages_py"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... _braccio_controller_generate_messages_check_deps_Adc"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... braccio_controller_generate_messages"
-	@echo "... braccio_controller_generate_messages_cpp"
-	@echo "... braccio_controller_generate_messages_eus"
-	@echo "... braccio_controller_geneus"
-	@echo "... braccio_controller_generate_messages_lisp"
-	@echo "... braccio_controller_gennodejs"
-	@echo "... roscpp_generate_messages_cpp"
 	@echo "... braccio_controller_genpy"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... sensor_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... image_view_gencfg"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... detection_node"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... braccio_controller_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... geometry_msgs_generate_messages_py"
+	@echo "... _braccio_controller_generate_messages_check_deps_Adc"
+	@echo "... std_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... braccio_controller_generate_messages"
+	@echo "... braccio_controller_generate_messages_cpp"
+	@echo "... _braccio_controller_generate_messages_check_deps_coords"
+	@echo "... image_view_gencfg"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
+	@echo "... dynamic_reconfigure_generate_messages_py"
+	@echo "... dynamic_reconfigure_gencfg"
+	@echo "... dynamic_reconfigure_generate_messages_nodejs"
 	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... detection_node"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg"
+messages_str = "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg;/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg"
 services_str = ""
 pkg_name = "braccio_controller"
 dependencies_str = "std_msgs"

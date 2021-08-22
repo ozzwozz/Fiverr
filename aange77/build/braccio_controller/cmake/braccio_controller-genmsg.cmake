@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "braccio_controller: 1 messages, 0 services")
+message(STATUS "braccio_controller: 2 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_braccio_controller_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "braccio_controller" "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg" ""
 )
 
+get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg" NAME_WE)
+add_custom_target(_braccio_controller_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "braccio_controller" "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg" ""
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -30,6 +35,12 @@ add_custom_target(_braccio_controller_generate_messages_check_deps_${_filename}
 ### Generating Messages
 _generate_msg_cpp(braccio_controller
   "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/braccio_controller
+)
+_generate_msg_cpp(braccio_controller
+  "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/braccio_controller
@@ -51,6 +62,8 @@ add_dependencies(braccio_controller_generate_messages braccio_controller_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg" NAME_WE)
 add_dependencies(braccio_controller_generate_messages_cpp _braccio_controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg" NAME_WE)
+add_dependencies(braccio_controller_generate_messages_cpp _braccio_controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(braccio_controller_gencpp)
@@ -63,6 +76,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS braccio_controller_generate_message
 ### Generating Messages
 _generate_msg_eus(braccio_controller
   "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/braccio_controller
+)
+_generate_msg_eus(braccio_controller
+  "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/braccio_controller
@@ -84,6 +103,8 @@ add_dependencies(braccio_controller_generate_messages braccio_controller_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg" NAME_WE)
 add_dependencies(braccio_controller_generate_messages_eus _braccio_controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg" NAME_WE)
+add_dependencies(braccio_controller_generate_messages_eus _braccio_controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(braccio_controller_geneus)
@@ -96,6 +117,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS braccio_controller_generate_message
 ### Generating Messages
 _generate_msg_lisp(braccio_controller
   "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/braccio_controller
+)
+_generate_msg_lisp(braccio_controller
+  "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/braccio_controller
@@ -117,6 +144,8 @@ add_dependencies(braccio_controller_generate_messages braccio_controller_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg" NAME_WE)
 add_dependencies(braccio_controller_generate_messages_lisp _braccio_controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg" NAME_WE)
+add_dependencies(braccio_controller_generate_messages_lisp _braccio_controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(braccio_controller_genlisp)
@@ -129,6 +158,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS braccio_controller_generate_message
 ### Generating Messages
 _generate_msg_nodejs(braccio_controller
   "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/braccio_controller
+)
+_generate_msg_nodejs(braccio_controller
+  "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/braccio_controller
@@ -150,6 +185,8 @@ add_dependencies(braccio_controller_generate_messages braccio_controller_generat
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg" NAME_WE)
 add_dependencies(braccio_controller_generate_messages_nodejs _braccio_controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg" NAME_WE)
+add_dependencies(braccio_controller_generate_messages_nodejs _braccio_controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
 add_custom_target(braccio_controller_gennodejs)
@@ -162,6 +199,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS braccio_controller_generate_message
 ### Generating Messages
 _generate_msg_py(braccio_controller
   "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/braccio_controller
+)
+_generate_msg_py(braccio_controller
+  "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/braccio_controller
@@ -182,6 +225,8 @@ add_dependencies(braccio_controller_generate_messages braccio_controller_generat
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg" NAME_WE)
+add_dependencies(braccio_controller_generate_messages_py _braccio_controller_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg" NAME_WE)
 add_dependencies(braccio_controller_generate_messages_py _braccio_controller_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

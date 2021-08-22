@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/oscar/Documents/GitHub/Fiverr/aange77/build
 include braccio_controller/CMakeFiles/braccio_controller_generate_messages_cpp.dir/progress.make
 
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_cpp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/Adc.h
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_cpp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/coords.h
 
 
 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/Adc.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -62,8 +63,15 @@ braccio_controller/CMakeFiles/braccio_controller_generate_messages_cpp: /home/os
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from braccio_controller/Adc.msg"
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller && /home/oscar/Documents/GitHub/Fiverr/aange77/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/coords.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/coords.h: /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/coords.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from braccio_controller/coords.msg"
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller && /home/oscar/Documents/GitHub/Fiverr/aange77/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller -e /opt/ros/noetic/share/gencpp/cmake/..
+
 braccio_controller_generate_messages_cpp: braccio_controller/CMakeFiles/braccio_controller_generate_messages_cpp
 braccio_controller_generate_messages_cpp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/Adc.h
+braccio_controller_generate_messages_cpp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/coords.h
 braccio_controller_generate_messages_cpp: braccio_controller/CMakeFiles/braccio_controller_generate_messages_cpp.dir/build.make
 
 .PHONY : braccio_controller_generate_messages_cpp

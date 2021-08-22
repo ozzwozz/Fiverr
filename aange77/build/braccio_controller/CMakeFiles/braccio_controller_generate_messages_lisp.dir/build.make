@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/oscar/Documents/GitHub/Fiverr/aange77/build
 include braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/progress.make
 
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/Adc.lisp
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/coords.lisp
 
 
 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/Adc.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
@@ -61,8 +62,14 @@ braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp: /home/o
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from braccio_controller/Adc.msg"
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg
 
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/coords.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/coords.lisp: /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from braccio_controller/coords.msg"
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg
+
 braccio_controller_generate_messages_lisp: braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp
 braccio_controller_generate_messages_lisp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/Adc.lisp
+braccio_controller_generate_messages_lisp: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/coords.lisp
 braccio_controller_generate_messages_lisp: braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build.make
 
 .PHONY : braccio_controller_generate_messages_lisp

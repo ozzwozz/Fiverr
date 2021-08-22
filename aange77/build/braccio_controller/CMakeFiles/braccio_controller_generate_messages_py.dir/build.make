@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/oscar/Documents/GitHub/Fiverr/aange77/build
 include braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/progress.make
 
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_Adc.py
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_coords.py
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/__init__.py
 
 
@@ -62,13 +63,20 @@ braccio_controller/CMakeFiles/braccio_controller_generate_messages_py: /home/osc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG braccio_controller/Adc"
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg
 
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_coords.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_coords.py: /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG braccio_controller/coords"
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg
+
 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/__init__.py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_Adc.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for braccio_controller"
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/__init__.py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_coords.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for braccio_controller"
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg --initpy
 
 braccio_controller_generate_messages_py: braccio_controller/CMakeFiles/braccio_controller_generate_messages_py
 braccio_controller_generate_messages_py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_Adc.py
+braccio_controller_generate_messages_py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_coords.py
 braccio_controller_generate_messages_py: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/__init__.py
 braccio_controller_generate_messages_py: braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build.make
 

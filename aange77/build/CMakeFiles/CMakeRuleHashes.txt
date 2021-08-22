@@ -1,13 +1,19 @@
 # Hashes of file build rules.
 c201a485a4976416428b25a5ea5e0977 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/Adc.h
+fbc4b49912739227903b1114c1a31999 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/include/braccio_controller/coords.h
 acd7d9a8be3d0e9edb29af4e68ade881 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_Adc.py
 1b9b9fc1991056d3ad56ce74cd8099ca /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/__init__.py
+e1a0d27366ab2995281b731fa70f63e5 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/lib/python3/dist-packages/braccio_controller/msg/_coords.py
 534028126a23fdcf9043675e3c43d374 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/Adc.lisp
+797a7f50040e2e8dd283fc8e45749259 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/common-lisp/ros/braccio_controller/msg/coords.lisp
 64200b33a8fa2deab9f8e941a150a0ca /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/Adc.js
+960fda21fe5238514f40d9f96526b3a5 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/coords.js
 246e782a9f59445f6e7c7228192b3773 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/manifest.l
 579ea8a910effe6290ec1de6d9c59457 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/Adc.l
+6a9aebfa2f94503328fecedd239cd02c /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/coords.l
 2e1c6044539ffc321a9518e70ff66e17 CMakeFiles/clean_test_results
 dd585d3109d46e63fadecb6e039362b5 braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_Adc
+14957c3975615d794911158edf695817 braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords
 f5ea05867695c324041145f456fc0896 braccio_controller/CMakeFiles/braccio_controller_generate_messages_cpp
 f5ea05867695c324041145f456fc0896 braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus
 f5ea05867695c324041145f456fc0896 braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp

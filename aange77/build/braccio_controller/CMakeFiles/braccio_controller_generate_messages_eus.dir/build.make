@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/oscar/Documents/GitHub/Fiverr/aange77/build
 include braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/progress.make
 
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/Adc.l
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/coords.l
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/manifest.l
 
 
@@ -62,12 +63,18 @@ braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus: /home/os
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from braccio_controller/Adc.msg"
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg
 
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/coords.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/coords.l: /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from braccio_controller/coords.msg"
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg
+
 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for braccio_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for braccio_controller"
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller braccio_controller std_msgs
 
 braccio_controller_generate_messages_eus: braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus
 braccio_controller_generate_messages_eus: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/Adc.l
+braccio_controller_generate_messages_eus: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/msg/coords.l
 braccio_controller_generate_messages_eus: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/roseus/ros/braccio_controller/manifest.l
 braccio_controller_generate_messages_eus: braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build.make
 

@@ -1,2 +1,4 @@
 <launch>
+  <include name="$(find braccio_controller)/launch.launch"/>
+  <include name="$(find detection)/launch.launch"/>
 </launch>

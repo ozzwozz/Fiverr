@@ -90,6 +90,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -102,17 +113,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -124,16 +124,16 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : edit_cache/fast
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,81 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule
+.PHONY : braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule
+
+# Convenience name for target.
+braccio_controller_generate_messages_py: braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule
+
+.PHONY : braccio_controller_generate_messages_py
+
+# fast build rule for target.
+braccio_controller_generate_messages_py/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build
+.PHONY : braccio_controller_generate_messages_py/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule
+.PHONY : braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule
+
+# Convenience name for target.
+braccio_controller_gennodejs: braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule
+
+.PHONY : braccio_controller_gennodejs
+
+# fast build rule for target.
+braccio_controller_gennodejs/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build
+.PHONY : braccio_controller_gennodejs/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+braccio_controller_generate_messages_lisp: braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule
+
+.PHONY : braccio_controller_generate_messages_lisp
+
+# fast build rule for target.
+braccio_controller_generate_messages_lisp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build
+.PHONY : braccio_controller_generate_messages_lisp/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule
+.PHONY : braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule
+
+# Convenience name for target.
+braccio_controller_geneus: braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule
+
+.PHONY : braccio_controller_geneus
+
+# fast build rule for target.
+braccio_controller_geneus/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build
+.PHONY : braccio_controller_geneus/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule
+
+# Convenience name for target.
+braccio_controller_gencpp: braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule
+
+.PHONY : braccio_controller_gencpp
+
+# fast build rule for target.
+braccio_controller_gencpp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build
+.PHONY : braccio_controller_gencpp/fast
+
+# Convenience name for target.
 braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
 .PHONY : braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
@@ -196,6 +271,36 @@ roscpp_generate_messages_lisp: braccio_controller/CMakeFiles/roscpp_generate_mes
 roscpp_generate_messages_lisp/fast:
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build
 .PHONY : roscpp_generate_messages_lisp/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+.PHONY : braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_nodejs: braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+geometry_msgs_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
+.PHONY : geometry_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
@@ -228,21 +333,6 @@ rosgraph_msgs_generate_messages_eus/fast:
 .PHONY : rosgraph_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule
-.PHONY : braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule
-
-# Convenience name for target.
-braccio_controller_gencpp: braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/rule
-
-.PHONY : braccio_controller_gencpp
-
-# fast build rule for target.
-braccio_controller_gencpp/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gencpp.dir/build
-.PHONY : braccio_controller_gencpp/fast
-
-# Convenience name for target.
 braccio_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
 .PHONY : braccio_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
@@ -258,34 +348,19 @@ std_msgs_generate_messages_cpp/fast:
 .PHONY : std_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_eus: braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+rosgraph_msgs_generate_messages_cpp: braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : std_msgs_generate_messages_eus
+.PHONY : rosgraph_msgs_generate_messages_cpp
 
 # fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
+rosgraph_msgs_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+.PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_nodejs.dir/rule:
@@ -303,21 +378,6 @@ braccio_controller_generate_messages_nodejs/fast:
 .PHONY : braccio_controller_generate_messages_nodejs/fast
 
 # Convenience name for target.
-braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
 braccio_controller/CMakeFiles/braccio_controller_genlisp.dir/rule:
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_genlisp.dir/rule
 .PHONY : braccio_controller/CMakeFiles/braccio_controller_genlisp.dir/rule
@@ -333,19 +393,64 @@ braccio_controller_genlisp/fast:
 .PHONY : braccio_controller_genlisp/fast
 
 # Convenience name for target.
-braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule
-.PHONY : braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule
+braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+.PHONY : braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-braccio_controller_generate_messages_py: braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/rule
+roscpp_generate_messages_nodejs: braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
 
-.PHONY : braccio_controller_generate_messages_py
+.PHONY : roscpp_generate_messages_nodejs
 
 # fast build rule for target.
-braccio_controller_generate_messages_py/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_py.dir/build
-.PHONY : braccio_controller_generate_messages_py/fast
+roscpp_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+.PHONY : roscpp_generate_messages_nodejs/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+.PHONY : braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_eus: braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# fast build rule for target.
+std_msgs_generate_messages_eus/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+.PHONY : std_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
+.PHONY : braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# fast build rule for target.
+roscpp_generate_messages_py/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_py.dir/build
+.PHONY : roscpp_generate_messages_py/fast
 
 # Convenience name for target.
 braccio_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
@@ -393,19 +498,124 @@ roscpp_generate_messages_eus/fast:
 .PHONY : roscpp_generate_messages_eus/fast
 
 # Convenience name for target.
-braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule
+.PHONY : braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+braccio_controller_genpy: braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : braccio_controller_genpy
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+braccio_controller_genpy/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build.make braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build
+.PHONY : braccio_controller_genpy/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_eus: braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_eus
+
+# fast build rule for target.
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# fast build rule for target.
+roscpp_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+.PHONY : roscpp_generate_messages_cpp/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule
+.PHONY : braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+braccio_controller_generate_messages_eus: braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule
+
+.PHONY : braccio_controller_generate_messages_eus
+
+# fast build rule for target.
+braccio_controller_generate_messages_eus/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build
+.PHONY : braccio_controller_generate_messages_eus/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_lisp: braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_lisp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_lisp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
+.PHONY : sensor_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+.PHONY : braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_nodejs: braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+sensor_msgs_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/build
+.PHONY : sensor_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+.PHONY : braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_py: braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_py
+
+# fast build rule for target.
+sensor_msgs_generate_messages_py/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_py.dir/build
+.PHONY : sensor_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_Adc.dir/rule:
@@ -438,6 +648,51 @@ std_msgs_generate_messages_py/fast:
 .PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+.PHONY : braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+sensor_msgs_generate_messages_cpp: braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : sensor_msgs_generate_messages_cpp
+
+# fast build rule for target.
+sensor_msgs_generate_messages_cpp/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/build
+.PHONY : sensor_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+.PHONY : braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_nodejs: braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+std_msgs_generate_messages_nodejs/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make braccio_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+.PHONY : std_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
 braccio_controller/CMakeFiles/braccio_controller_generate_messages.dir/rule:
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_generate_messages.dir/rule
 .PHONY : braccio_controller/CMakeFiles/braccio_controller_generate_messages.dir/rule
@@ -468,109 +723,19 @@ braccio_controller_generate_messages_cpp/fast:
 .PHONY : braccio_controller_generate_messages_cpp/fast
 
 # Convenience name for target.
-braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule
-.PHONY : braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule
+braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/rule:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/rule
+.PHONY : braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/rule
 
 # Convenience name for target.
-braccio_controller_generate_messages_eus: braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/rule
+_braccio_controller_generate_messages_check_deps_coords: braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/rule
 
-.PHONY : braccio_controller_generate_messages_eus
+.PHONY : _braccio_controller_generate_messages_check_deps_coords
 
 # fast build rule for target.
-braccio_controller_generate_messages_eus/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_eus.dir/build
-.PHONY : braccio_controller_generate_messages_eus/fast
-
-# Convenience name for target.
-braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule
-.PHONY : braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule
-
-# Convenience name for target.
-braccio_controller_geneus: braccio_controller/CMakeFiles/braccio_controller_geneus.dir/rule
-
-.PHONY : braccio_controller_geneus
-
-# fast build rule for target.
-braccio_controller_geneus/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build.make braccio_controller/CMakeFiles/braccio_controller_geneus.dir/build
-.PHONY : braccio_controller_geneus/fast
-
-# Convenience name for target.
-braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule
-.PHONY : braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-braccio_controller_generate_messages_lisp: braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/rule
-
-.PHONY : braccio_controller_generate_messages_lisp
-
-# fast build rule for target.
-braccio_controller_generate_messages_lisp/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build.make braccio_controller/CMakeFiles/braccio_controller_generate_messages_lisp.dir/build
-.PHONY : braccio_controller_generate_messages_lisp/fast
-
-# Convenience name for target.
-braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule
-.PHONY : braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule
-
-# Convenience name for target.
-braccio_controller_gennodejs: braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/rule
-
-.PHONY : braccio_controller_gennodejs
-
-# fast build rule for target.
-braccio_controller_gennodejs/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build.make braccio_controller/CMakeFiles/braccio_controller_gennodejs.dir/build
-.PHONY : braccio_controller_gennodejs/fast
-
-# Convenience name for target.
-braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule
-.PHONY : braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule
-
-# Convenience name for target.
-braccio_controller_genpy: braccio_controller/CMakeFiles/braccio_controller_genpy.dir/rule
-
-.PHONY : braccio_controller_genpy
-
-# fast build rule for target.
-braccio_controller_genpy/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build.make braccio_controller/CMakeFiles/braccio_controller_genpy.dir/build
-.PHONY : braccio_controller_genpy/fast
-
-# Convenience name for target.
-braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f CMakeFiles/Makefile2 braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make braccio_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
+_braccio_controller_generate_messages_check_deps_coords/fast:
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build && $(MAKE) -f braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/build.make braccio_controller/CMakeFiles/_braccio_controller_generate_messages_check_deps_coords.dir/build
+.PHONY : _braccio_controller_generate_messages_check_deps_coords/fast
 
 # Help Target
 help:
@@ -581,37 +746,48 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... edit_cache"
+	@echo "... braccio_controller_generate_messages_py"
+	@echo "... braccio_controller_gennodejs"
+	@echo "... braccio_controller_generate_messages_lisp"
+	@echo "... braccio_controller_geneus"
+	@echo "... braccio_controller_gencpp"
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... install/local"
 	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... braccio_controller_gencpp"
 	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_py"
+	@echo "... test"
+	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... braccio_controller_generate_messages_nodejs"
-	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... braccio_controller_genlisp"
-	@echo "... braccio_controller_generate_messages_py"
+	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... std_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... rebuild_cache"
 	@echo "... roscpp_generate_messages_eus"
-	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... braccio_controller_genpy"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... roscpp_generate_messages_cpp"
+	@echo "... braccio_controller_generate_messages_eus"
+	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... sensor_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... _braccio_controller_generate_messages_check_deps_Adc"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... std_msgs_generate_messages_nodejs"
+	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... braccio_controller_generate_messages"
 	@echo "... braccio_controller_generate_messages_cpp"
-	@echo "... braccio_controller_generate_messages_eus"
-	@echo "... braccio_controller_geneus"
-	@echo "... braccio_controller_generate_messages_lisp"
-	@echo "... braccio_controller_gennodejs"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... braccio_controller_genpy"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... test"
-	@echo "... edit_cache"
+	@echo "... _braccio_controller_generate_messages_check_deps_coords"
 .PHONY : help
 
 

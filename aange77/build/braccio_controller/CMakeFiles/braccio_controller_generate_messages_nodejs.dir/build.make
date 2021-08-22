@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/oscar/Documents/GitHub/Fiverr/aange77/build
 include braccio_controller/CMakeFiles/braccio_controller_generate_messages_nodejs.dir/progress.make
 
 braccio_controller/CMakeFiles/braccio_controller_generate_messages_nodejs: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/Adc.js
+braccio_controller/CMakeFiles/braccio_controller_generate_messages_nodejs: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/coords.js
 
 
 /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/Adc.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
@@ -61,8 +62,14 @@ braccio_controller/CMakeFiles/braccio_controller_generate_messages_nodejs: /home
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from braccio_controller/Adc.msg"
 	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/Adc.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg
 
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/coords.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/coords.js: /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/oscar/Documents/GitHub/Fiverr/aange77/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from braccio_controller/coords.msg"
+	cd /home/oscar/Documents/GitHub/Fiverr/aange77/build/braccio_controller && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg/coords.msg -Ibraccio_controller:/home/oscar/Documents/GitHub/Fiverr/aange77/src/braccio_controller/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p braccio_controller -o /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg
+
 braccio_controller_generate_messages_nodejs: braccio_controller/CMakeFiles/braccio_controller_generate_messages_nodejs
 braccio_controller_generate_messages_nodejs: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/Adc.js
+braccio_controller_generate_messages_nodejs: /home/oscar/Documents/GitHub/Fiverr/aange77/devel/share/gennodejs/ros/braccio_controller/msg/coords.js
 braccio_controller_generate_messages_nodejs: braccio_controller/CMakeFiles/braccio_controller_generate_messages_nodejs.dir/build.make
 
 .PHONY : braccio_controller_generate_messages_nodejs
