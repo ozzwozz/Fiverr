@@ -26,7 +26,16 @@ class detector
   private:
     bool ParamsSet;
     cv::Mat StopImage;
+    cv::Mat RightImage;
+    cv::Mat LeftImage;
 
+    // amount to multiply the pixel value of the detected block
+    const int x_total = 47; // value in mm
+    const int x_length_left = -(x_total/2);
+    const int x_length_right = (x_total/2);
+    const int y_total = 55; // value in mm
+    const int y_length_left = -(y_total/2);
+    const int y_length_right = (y_total/2);
 
   protected:
     cv::SimpleBlobDetector BLOBdetector;
@@ -44,6 +53,8 @@ class detector
       // centreTarget_pub_ = nh_.advertise<geometry_msgs::Twist>("/centreTarget", 1);
 
 
+      LeftImage = imread("/home/oscar/Pictures/LeftEnd.png", IMREAD_GRAYSCALE);
+      RightImage = imread("/home/oscar/Pictures/RightEnd.png", IMREAD_GRAYSCALE);
       // open a window to see what the camera sees
       cv::namedWindow(OPENCV_WINDOW);
 
@@ -65,12 +76,20 @@ class detector
 
     void handCameraCB(const sensor_msgs::ImageConstPtr& msg)
     {
-      Mat CurrentImage = imread("/home/oscar/Pictures/inline.png", IMREAD_GRAYSCALE);
-      Mat LeftImage = imread("/home/oscar/Pictures/LeftEnd.png", IMREAD_GRAYSCALE);
-      Mat RightImage = imread("/home/oscar/Pictures/RightEnd.png", IMREAD_GRAYSCALE);
-
       cv_bridge::CvImagePtr cv_ptr;
-      //cv::Mat CurrentImage;
+      cv::Mat CurrentImage;
+      try
+      {
+        cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);  // convert from imagetransport to rosbridge pointer
+        CurrentImage = cv_ptr->image;   // copy image to Mat type to use with opencv
+        CurrentImage = ImagePrep(CurrentImage);
+
+      }
+      catch (cv_bridge::Exception& e)
+      {
+        ROS_ERROR("cv_bridge exception: %s", e.what()); // if error occurs, output to terminal
+        return;
+      }
 
       cv::Mat LeftResult, RightResult;
       double StopScore;
@@ -81,9 +100,26 @@ class detector
       minMaxLoc( LeftResult, &minVal, &maxVal, &minLoc, &maxLoc);
       rectangle( CurrentImage, Point(minLoc.x, minLoc.y), Point( minLoc.x + LeftImage.cols , minLoc.y + LeftImage.rows ), Scalar(0,255,0));
 
+      geometry_msgs::Twist object1location;
+      object1location.linear.x = 0;
+      object1location.linear.y = (minLoc.x + (LeftImage.cols/2)) / x_length_left;
+      object1location.linear.z = (minLoc.y + (LeftImage.rows/2)) / y_length_left;
+      //object1location.angular.x = ;
+
+
       cv::matchTemplate(CurrentImage, RightImage, RightResult, cv::TM_SQDIFF_NORMED);
       minMaxLoc( RightResult, &minVal, &maxVal, &minLoc, &maxLoc);
       rectangle( CurrentImage, Point(minLoc.x, minLoc.y), Point( minLoc.x + RightImage.cols , minLoc.y + RightImage.rows ), Scalar(0,255,0));
+
+      geometry_msgs::Twist object2location;
+      object2location.linear.x = 0;
+      object2location.linear.y = (minLoc.x + (LeftImage.cols/2)) / x_length_right;
+      object2location.linear.z = (minLoc.y + (LeftImage.rows/2)) / y_length_right;
+      // //object2location.angular.x = ;
+
+      object1_pub_.publish(object1location);
+      object2_pub_.publish(object2location);
+
 
       cv::imshow(OPENCV_WINDOW, CurrentImage);    cv::waitKey(100);
     }
