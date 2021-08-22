@@ -52,9 +52,14 @@ class detector
       object2_pub_ = nh_.advertise<geometry_msgs::Twist>("/object2", 1);
       // centreTarget_pub_ = nh_.advertise<geometry_msgs::Twist>("/centreTarget", 1);
 
+  ////
+  //// THE FOLLOWING FILE PATHS NEED TO BE CHANGED DEPENDING ON THE SYSTEM
+  ////
+      LeftImage = imread("/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/config/LeftEnd.png", IMREAD_GRAYSCALE);
+      RightImage = imread("/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/config/RightEnd.png", IMREAD_GRAYSCALE);
 
-      LeftImage = imread("/home/oscar/Pictures/LeftEnd.png", IMREAD_GRAYSCALE);
-      RightImage = imread("/home/oscar/Pictures/RightEnd.png", IMREAD_GRAYSCALE);
+
+
       // open a window to see what the camera sees
       cv::namedWindow(OPENCV_WINDOW);
 
