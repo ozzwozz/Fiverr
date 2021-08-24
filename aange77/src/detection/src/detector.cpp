@@ -55,10 +55,13 @@ class detector
   ////
   //// THE FOLLOWING FILE PATHS NEED TO BE CHANGED DEPENDING ON THE SYSTEM
   ////
-      LeftImage = imread("/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/config/LeftEnd.png", IMREAD_GRAYSCALE);
-      RightImage = imread("/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/config/RightEnd.png", IMREAD_GRAYSCALE);
+      LeftImage = imread("/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/config/LeftEnd.png");
+      RightImage = imread("/home/oscar/Documents/GitHub/Fiverr/aange77/src/detection/config/RightEnd.png");
+      cv::cvtColor(LeftImage, LeftImage, cv::COLOR_BGR2GRAY); // gray colourspace is easier for most opencv functions
+      cv::cvtColor(RightImage, RightImage, cv::COLOR_BGR2GRAY); // gray colourspace is easier for most opencv functions
 
-
+      //LeftImage = ImagePrep(LeftImage);
+      //RightImage = ImagePrep(RightImage);
 
       // open a window to see what the camera sees
       cv::namedWindow(OPENCV_WINDOW);
@@ -87,6 +90,7 @@ class detector
       {
         cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);  // convert from imagetransport to rosbridge pointer
         CurrentImage = cv_ptr->image;   // copy image to Mat type to use with opencv
+        //CurrentImage = imread("/home/oscar/Pictures/inline.png"); // for testing
         CurrentImage = ImagePrep(CurrentImage);
 
       }
@@ -107,19 +111,18 @@ class detector
 
       geometry_msgs::Twist object1location;
       object1location.linear.x = 0;
-      object1location.linear.y = (minLoc.x + (LeftImage.cols/2)) / x_length_left;
-      object1location.linear.z = (minLoc.y + (LeftImage.rows/2)) / y_length_left;
+      object1location.linear.y = ((minLoc.x + (LeftImage.cols/2)) / x_length_left) * 10;
+      object1location.linear.z = ((minLoc.y + (LeftImage.rows/2)) / y_length_left) * 10;
       //object1location.angular.x = ;
 
 
-      cv::matchTemplate(CurrentImage, RightImage, RightResult, cv::TM_SQDIFF_NORMED);
       minMaxLoc( RightResult, &minVal, &maxVal, &minLoc, &maxLoc);
       rectangle( CurrentImage, Point(minLoc.x, minLoc.y), Point( minLoc.x + RightImage.cols , minLoc.y + RightImage.rows ), Scalar(0,255,0));
 
       geometry_msgs::Twist object2location;
       object2location.linear.x = 0;
-      object2location.linear.y = (minLoc.x + (LeftImage.cols/2)) / x_length_right;
-      object2location.linear.z = (minLoc.y + (LeftImage.rows/2)) / y_length_right;
+      object2location.linear.y = ((minLoc.x + (LeftImage.cols/2)) / x_length_right) * 10;
+      object2location.linear.z = ((minLoc.y + (LeftImage.rows/2)) / y_length_right) * 10;
       // //object2location.angular.x = ;
 
       object1_pub_.publish(object1location);

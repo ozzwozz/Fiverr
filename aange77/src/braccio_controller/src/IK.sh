@@ -22,10 +22,10 @@ def callback_function(message):
     global failure_count
     if (success==1 and message.real== 1):
         rospy.loginfo("sent to arduino")
-        msg_to_publish.adc0= out1
-        msg_to_publish.adc1= out2
-        msg_to_publish.adc2= out3
-        msg_to_publish.adc3= out4
+        msg_to_publish.adc0= int(out1)
+        msg_to_publish.adc1= int(out2)
+        msg_to_publish.adc2= int(out3)
+        msg_to_publish.adc3= int(out4)
         msg_to_publish.adc4= message.wrist
         msg_to_publish.adc5= message.gripper
         failure_count = 0

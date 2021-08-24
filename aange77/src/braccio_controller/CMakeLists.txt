@@ -12,9 +12,6 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
-  cv_bridge
-  image_transport
-  ##image_view
 )
 
 ## System dependencies are found with CMake's conventions
@@ -111,9 +108,9 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES braccio_controller
-#  CATKIN_DEPENDS roscpp rospy std_msgs
+  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
-   CATKIN_DEPENDS message_runtime cv_bridge image_transport roscpp rospy
+#   CATKIN_DEPENDS message_runtime cv_bridge image_transport roscpp rospy
 )
 
 ###########

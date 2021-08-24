@@ -5,6 +5,7 @@ import rospy
 from braccio_controller.msg import coords
 from geometry_msgs.msg import Twist
 import time
+from std_msgs.msg import UInt8
 
 #creating global variables to be used
 success= 0
@@ -35,12 +36,14 @@ def movement(data):
 		global angular_offset
 		global wrist_offset_angle
 		check_sucess = 1
+		pos1 = False
+		pos2 = False
 		#check if coordinates are possible movements
 		vari = coords()
-		vari.x = 0
-		vari.y  = coords1.y.linear
-		vari.z  = coords1.z.linear
-		vari.angle = coords1.x.angular + angular_offset
+		vari.x = 1
+		vari.y  = int(coords1.linear.y)
+		vari.z  = int(coords1.linear.z)
+		vari.angle = int(coords1.angular.x + angular_offset)
 		vari.real = 0
 		pub.publish(vari)
 		time.sleep(1)
@@ -48,15 +51,17 @@ def movement(data):
 		if (success != 0):
 			print("position 1 unreachable")
 			rospy.loginfo("position 1 unreachable")
+			
 		else:
 			print("position 1 sucess")
 			rospy.loginfo("position 1 sucess")
-			check_success = check_sucess*3
+
+			pos1 = True
 		#checks if data 2 is a possible movement
-		vari.x = 0
-		vari.y  = coords2.y.linear
-		vari.z  = coords2.z.linear
-		vari.angle = coords2.x.angular + angular_offset
+		vari.x = 1
+		vari.y  = int(coords2.linear.y)
+		vari.z  = int(coords2.linear.z)
+		vari.angle = int(coords2.angular.x + angular_offset)
 		vari.real = 0
 		pub.publish(vari)
 		time.sleep(1)
@@ -67,16 +72,17 @@ def movement(data):
 		else:
 			print("position 2 sucess")
 			rospy.loginfo("position 2 sucess")
-			check_success = check_sucess*10
-		#section to move to postion 1	
-		if (9>check_sucess>2):
+			pos2 =True
+		#section to move to postion 1
+		print(check_sucess)	
+		if (pos1 == True):
 			print("moving to position 1")
 			rospy.loginfo("moving to position 1")
 			#movesto position one with claw open
-			vari.x = 0
-			vari.y  = coords1.y.linear
-			vari.z  = coords1.z.linear
-			vari.angle = coords1.x.angular + angular_offset
+			vari.x = 1
+			vari.y  = int(coords1.linear.y)
+			vari.z  = int(coords1.linear.z)
+			vari.angle = int(coords1.angular.x + angular_offset)
 			vari.real = 1
 			vari.wrist = wrist_offset_angle
 			vari.gripper = 10
@@ -89,10 +95,10 @@ def movement(data):
 			#moves object to center
 			print("moving to center")
 			rospy.loginfo("moving to center")
-			vari.x = 0
-			vari.y  = 0
-			vari.z  = coords1.z.linear
-			vari.angle = 90 + angular_offset
+			vari.x = 1
+			vari.y  = 1
+			vari.z  = int(coords1.linear.z)
+			vari.angle = 180 + angular_offset
 			vari.real = 1
 			vari.wrist = wrist_offset_angle
 			pub.publish(vari)
@@ -101,14 +107,14 @@ def movement(data):
 			vari.gripper = 10
 			pub.publish(vari)
 			time.sleep(2)
-		if (check_sucess > 9):
+		if (pos2 == True):
 			#moves to position 2
 			print("moving to position 2")
 			rospy.loginfo("moving to position 2")
-			vari.x = 0
-			vari.y  = coords2.y.linear
-			vari.z  = coords2.z.linear
-			vari.angle = coords2.x.angular + angular_offset
+			vari.x = 1
+			vari.y  = int(coords2.linear.y)
+			vari.z  = int(coords2.linear.z)
+			vari.angle = int(coords2.angular.x + angular_offset)
 			vari.real = 1
 			vari.wrist = wrist_offset_angle
 			vari.gripper = 10
@@ -121,10 +127,10 @@ def movement(data):
 			print("moving to center")
 			rospy.loginfo("moving to center")
 			#moves to center
-			vari.x = 0
-			vari.y  = 0
-			vari.z  = coords2.z.linear
-			vari.angle = 90 + angular_offset
+			vari.x = 1
+			vari.y  = 1
+			vari.z  = int(coords2.linear.z)
+			vari.angle = 180 + angular_offset
 			vari.real = 1
 			vari.wrist = wrist_offset_angle
 			pub.publish(vari)
@@ -133,14 +139,14 @@ def movement(data):
 			vari.gripper = 10
 			pub.publish(vari)
 			time.sleep(2)
-		if(check_sucess > 2):
+		if(pos1 == True or pos2 == True):
 			print("picking up blocks")
 			rospy.loginfo("picking up blocks")
 			#moves top center to pick up both objects
-			vari.x = 0
-			vari.y  = 0
-			vari.z  = coords2.z.linear + 30
-			vari.angle = coords2.x.angular + angular_offset
+			vari.x = 1
+			vari.y  = 1
+			vari.z  = int(coords2.linear.z + 30)
+			vari.angle = int(180+ angular_offset)
 			vari.real = 1
 			vari.wrist = wrist_offset_angle
 			pub.publish(vari)
@@ -150,10 +156,10 @@ def movement(data):
 			pub.publish(vari)
 			time.sleep(2)
 			#raises objects
-			vari.x = 0
-			vari.y  = 0
-			vari.z  = coords2.z.linear -30
-			vari.angle = 90 + angular_offset
+			vari.x = 1
+			vari.y  = 1
+			vari.z  = int(coords2.linear.z -10)
+			vari.angle = 180 + angular_offset
 			vari.real = 1
 			vari.wrist = wrist_offset_angle
 			pub.publish(vari)
@@ -162,13 +168,16 @@ def movement(data):
 		print("only one data received")
 		rospy.loginfo("only one data received")
 		
+	print("done")
+		
 #calback function for receiving twist data and saving position
 def callback_twist1(message):
+	rospy.loginfo("coords 1")
 	global coords1
 	global data_aquired
-	coords1.x.angular = message.x.angular
-	coords1.y.linear = message.y.linear
-	coords1.z.linear = message.z.linear
+	coords1.angular.x = message.angular.x
+	coords1.linear.y = message.linear.y
+	coords1.linear.z = message.linear.z
 	if (data_aquired< 2):
 		data_aquired = data_aquired+1
 		movement(data_aquired)
@@ -176,22 +185,37 @@ def callback_twist1(message):
 
 #callback function for receiving twist data and saving position 2
 def callback_twist2(message):
+	rospy.loginfo("coords 2")
 	global coords2
 	global data_aquired
-	coords2.x.angular = message.x.angular
-	coords2.y.linear = message.y.linear
-	coords2.z.linear = message.z.linear
-	if (data_aquired< 10):
+	coords2.angular.x = message.angular.x
+	coords2.linear.y = message.linear.y
+	coords2.linear.z = message.linear.z
+	if (data_aquired< 2):
 		data_aquired = data_aquired+1
 		movement(data_aquired)
 	rospy.loginfo("coordinates of item 2 received")
 
 
 #declares subscriber objects
-sub_success = rospy.Subscriber("Coords", coords, callback_success) 
+sub_success = rospy.Subscriber("Sucess_count", UInt8, callback_success) 
 
-sub_twist1 = rospy.Subscriber("Twist1", Twist, callback_twist1)
-sub_twist2 = rospy.Subscriber("Twist2", Twist, callback_twist2)
+sub_twist1 = rospy.Subscriber("object1", Twist, callback_twist1)
+sub_twist2 = rospy.Subscriber("object2", Twist, callback_twist2)
+
+
+#----------------------------------test function-------------------------------------
+def tester():
+	coords2.angular.x = 180
+	coords2.linear.y = -50
+	coords2.linear.z =150
+	coords1.angular.x = 180
+	coords1.linear.y = 50
+	coords1.linear.z = 150
+	movement(2)
+
+#-------------------------------------------------------------------------------
+
 
 
 #main loop
@@ -199,6 +223,7 @@ if __name__ == "__main__":
 	rospy.init_node("main_controller")
 	rospy.loginfo("hello from main_controller")
 	print("hello from main_controller")
+	time.sleep(20)
 	rate = rospy.Rate(5)
 	while not rospy.is_shutdown():
 		rospy.spin()

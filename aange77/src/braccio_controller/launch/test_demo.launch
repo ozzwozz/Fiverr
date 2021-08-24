@@ -3,10 +3,10 @@
 <!-- <node pkg="braccio_controller" name="detector" type="detector.cpp" output="screen">
 </node> -->
 
-<node pkg="braccio_controller" name="braccio_controller" type="main_controller.sh" output="screen">
+<node pkg="braccio_controller" name="braccio controller" type="main_controller.sh" output="screen">
 </node>
 
-<node pkg="braccio_controller" name="Inverse_kinematics" type="IK.sh" output="screen">
+<node pkg="braccio_controller" name="Inverse kinematics" type="IK.sh" output="screen">
 </node>
 
 <node pkg="rosserial_python" type="serial_node.py" name="Arduino_thing" output="screen">
