@@ -1,0 +1,3 @@
+[console_scripts]
+snaking_node = snaking_movement.snaking_node:main
+

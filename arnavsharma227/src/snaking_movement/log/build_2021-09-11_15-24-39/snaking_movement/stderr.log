@@ -1,0 +1,5 @@
+/home/oscar/.local/lib/python3.8/site-packages/setuptools/dist.py:691: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+  warnings.warn(
+/home/oscar/.local/lib/python3.8/site-packages/setuptools/dist.py:691: UserWarning: Usage of dash-separated 'install-scripts' will not be supported in future versions. Please use the underscore name 'install_scripts' instead
+  warnings.warn(
+Sorry: IndentationError: expected an indented block (snaking_node.py, line 48)

@@ -1,0 +1,22 @@
+running egg_info
+writing build/snaking_movement/snaking_movement.egg-info/PKG-INFO
+writing dependency_links to build/snaking_movement/snaking_movement.egg-info/dependency_links.txt
+writing entry points to build/snaking_movement/snaking_movement.egg-info/entry_points.txt
+writing requirements to build/snaking_movement/snaking_movement.egg-info/requires.txt
+writing top-level names to build/snaking_movement/snaking_movement.egg-info/top_level.txt
+reading manifest file 'build/snaking_movement/snaking_movement.egg-info/SOURCES.txt'
+writing manifest file 'build/snaking_movement/snaking_movement.egg-info/SOURCES.txt'
+running build
+running build_py
+copying snaking_movement/snaking_node.py -> /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/build/lib/snaking_movement
+running install
+running install_lib
+copying /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/build/lib/snaking_movement/snaking_node.py -> /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages/snaking_movement
+byte-compiling /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages/snaking_movement/snaking_node.py to snaking_node.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages/snaking_movement-0.0.0-py3.8.egg-info' (and everything under it)
+Copying build/snaking_movement/snaking_movement.egg-info to /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages/snaking_movement-0.0.0-py3.8.egg-info
+running install_scripts
+Installing snaking_node script to /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/snaking_movement
+writing list of installed files to '/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/install.log'

@@ -1,0 +1,22 @@
+[0.322s] Invoking command in '/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement': PYTHONPATH=/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/snaking_movement build --build-base /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/build install --prefix /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement --record /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/install.log --single-version-externally-managed
+[0.577s] running egg_info
+[0.578s] writing build/snaking_movement/snaking_movement.egg-info/PKG-INFO
+[0.578s] writing dependency_links to build/snaking_movement/snaking_movement.egg-info/dependency_links.txt
+[0.578s] writing entry points to build/snaking_movement/snaking_movement.egg-info/entry_points.txt
+[0.578s] writing requirements to build/snaking_movement/snaking_movement.egg-info/requires.txt
+[0.578s] writing top-level names to build/snaking_movement/snaking_movement.egg-info/top_level.txt
+[0.613s] reading manifest file 'build/snaking_movement/snaking_movement.egg-info/SOURCES.txt'
+[0.614s] writing manifest file 'build/snaking_movement/snaking_movement.egg-info/SOURCES.txt'
+[0.615s] running build
+[0.615s] running build_py
+[0.615s] running install
+[0.615s] running install_lib
+[0.616s] running install_data
+[0.617s] copying launch/snaking_launch.py -> /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/share/snaking_movement
+[0.617s] running install_egg_info
+[0.618s] removing '/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages/snaking_movement-0.0.0-py3.8.egg-info' (and everything under it)
+[0.619s] Copying build/snaking_movement/snaking_movement.egg-info to /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages/snaking_movement-0.0.0-py3.8.egg-info
+[0.619s] running install_scripts
+[0.636s] Installing snaking_node script to /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/snaking_movement
+[0.636s] writing list of installed files to '/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/install.log'
+[0.659s] Invoked command in '/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement' returned '0': PYTHONPATH=/home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/snaking_movement build --build-base /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/build install --prefix /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/install/snaking_movement --record /home/oscar/Documents/GitHub/Fiverr/arnavsharma227/src/snaking_movement/build/snaking_movement/install.log --single-version-externally-managed
